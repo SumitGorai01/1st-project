@@ -8,6 +8,7 @@
  action="/listings/<%= listing._id %>?_method=PUT "
  novalidate
  class="need-vlaidate"
+ enctype="multipart/form-data"
  >
   <div  class="mb-3">
      <label for="title" class="form-label" >Title</label>
@@ -25,6 +26,13 @@
     <textarea name="listing[description] " class="form-control"><%= listing.description %></textarea >
   </div>
 
+
+  <div class="mb-3">
+  Origional Listing Image <br />
+    <img src="<%= origionalImageUrl%>"/>
+  </div>
+
+
   <div class="mb-3">
    <label for="image" class="form-label" >Image Link </label>
    <input
@@ -32,10 +40,10 @@
       value="<%= listing.image.url %>" 
       type="text" class="form-control "
       class="form-control" 
-      required
       />
   </div>
 
+  
      <div class="mb-3">
       <label for="price" class="form-label" >Price</label>
       <input 

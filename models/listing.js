@@ -38,7 +38,17 @@ const listingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref:"User",
   },
-});
+  geometry:{
+    type: String,
+    enum:["Point"],
+    required:true,
+  },
+},
+// category: {
+//   type:String,
+//   enum:["mountain","arctic","farms","deserts"]
+// }
+);
 
 listingSchema.post("findOneAndDelete", async(Listing) => {
   if (Listing) {
